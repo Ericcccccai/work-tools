@@ -11,14 +11,17 @@ from selenium.webdriver.support import expected_conditions as EC
 options = Options()
 driver = webdriver.Chrome(options=options)
 
-driver.get("https://app.structionsite.com/projects/45482/561930")
+################################
+# REMEMBER TO UPDATE THIS LINK WITH CORRESPOND FLOOR
+################################
+driver.get("https://app.structionsite.com/projects/45482/566546")
 
 #enters user name
-driver.switch_to.active_element.send_keys("abc@fieldai.com")
+driver.switch_to.active_element.send_keys("username@fieldai.com") #REPLACE EMAIL
 
 #enter password
 passwordSelector = driver.find_element(By.ID, "user_password")
-passwordSelector.send_keys("abc!")
+passwordSelector.send_keys("passwordHere") #REPLACE PASSWORD
 
 #click login button
 loginButton = driver.find_element(By.ID, "sign-in-button")
@@ -50,17 +53,33 @@ def find_zip_files(directory):
                 zip_files.append(os.path.join(root, file))
     return zip_files
 
-parent_folder = "/Users/caizhehao/Desktop/test_folder"
+################################
+# REMEMBER TO UPDATE THIS PATH WITH CORRESPOND FOLDER
+################################
+parent_folder = "/Users/caizhehao/Desktop/0318/floor_005_converted/id"
 
 zip_files = find_zip_files(parent_folder)
+zip_files = sorted(zip_files)
+totalUpload = 0
 
 for zip_file_path in zip_files:
     file_input = driver.find_element(By.CSS_SELECTOR, "input[type='file']")
     file_input.send_keys(zip_file_path)
     print(f"Uploaded: {zip_file_path}")  # Optional: print the path of the uploaded file
     time.sleep(20)  # Wait for 10 seconds before the next upload
+    dropdown_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(@class,'rounded') and contains(@class,'text-white')]"))
+    )
+    dropdown_button.click()
 
+    #click Coordinated BIM
+    dropdown_item = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Coordinated BIM')]"))
+    )
+    dropdown_item.click()
+    totalUpload += 1
 
+print("Total Uploaded: %d \n" % totalUpload)
 input("Press Enter to close the browser...")
 driver.quit()
 
