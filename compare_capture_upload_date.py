@@ -1,3 +1,10 @@
+######
+#NOPE NOT WORKING :< DOING IT MANUALLY
+######
+
+
+
+
 import os
 import time
 from selenium import webdriver
@@ -29,4 +36,13 @@ passwordSelector.send_keys("23361madero!") #REPLACE PASSWORD
 loginButton = driver.find_element(By.ID, "sign-in-button")
 loginButton.click()
 
+time.sleep(15)
+
+scrollbar = driver.find_element(By.XPATH, "//*[@id='prism-mainview']/div[2]/div/div/div/dashboard/div/div[1]/div/div[1]/div/div/div[4]/div[2]/div/widget/blox/div/div[2]/div")
+max_scroll_height = 500  # This value should be the maximum scroll height in pixels
+driver.execute_script(f"arguments[0].style.transform = 'translate(0px, {max_scroll_height}px)';", scrollbar)
+
+
+
 input()
+
