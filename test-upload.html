@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Test</title>
+</head>
+<body>
+    <h2>File Upload Test Form</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        Select file to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+        <input type="button" value="Upload File" id="uploadButton">
+    </form>
+    <div id="fileNames"></div>
+
+    <script>
+        document.getElementById("uploadButton").onclick = function() {
+            var input = document.getElementById("fileToUpload");
+            var output = document.getElementById("fileNames");
+            var fileNames = [];
+
+            for (var i = 0; i < input.files.length; i++) {
+                fileNames.push(input.files[i].name);
+            }
+
+            output.innerHTML = "<h3>Uploaded Files:</h3><ul>" + fileNames.map(function(fileName) {
+                return "<li>" + fileName + "</li>";
+            }).join("") + "</ul>";
+        };
+    </script>
+</body>
+</html>
