@@ -6,3 +6,4 @@ FOR STRUCTIONSITE UPLOADS:
      - OR
      - https://googlechromelabs.github.io/chrome-for-testing/#stable
   3. If yes chromedriver
+     -https://pypi.org/project/webdriver-manager/#use-with-chrome
