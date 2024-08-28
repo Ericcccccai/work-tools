@@ -1,3 +1,4 @@
+#using selenium 4
 import os
 import time
 from selenium import webdriver
@@ -7,13 +8,16 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+#for update
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 
 
 # Path to ChromeDriver
-chrome_driver_path = '/home/sg/Desktop/chromedriver-linux64/chromedriver'
+chrome_driver_path = '/usr/bin/chromedriver'
 
 # Path to Chrome binary
-chrome_binary_path = '/usr/bin/google-chrome'
+chrome_binary_path = '/usr/bin/chromium-browser'
 
 
 options = Options()
@@ -23,7 +27,9 @@ options.binary_location = chrome_binary_path
 service = Service(executable_path=chrome_driver_path)
 
 # Pass the Service object and options when creating the Chrome WebDriver instance
-driver = webdriver.Chrome(service=service, options=options)
+# Update driver too
+driver = webdriver.Chrome(service=service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
+
 
 
 #driver.get("https://app.structionsite.com/projects/45482/566547")
