@@ -31,17 +31,15 @@ service = Service(executable_path=chrome_driver_path)
 driver = webdriver.Chrome(service=service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
 
 
-
-#driver.get("https://app.structionsite.com/projects/45482/566547")
-driver.get("https://app.structionsite.com/projects/45482/561931") #4
+driver.get("https://app.structionsite.com/projects/xxx/xxx")
 
 
 #enters user name
-driver.switch_to.active_element.send_keys("sunggoo@fieldai.com")
+driver.switch_to.active_element.send_keys("xxx")
 
 #enter password
 passwordSelector = driver.find_element(By.ID, "user_password")
-passwordSelector.send_keys("23361madero!")
+passwordSelector.send_keys("xxx")
 
 #click login button
 loginButton = driver.find_element(By.ID, "sign-in-button")
@@ -73,7 +71,7 @@ def find_zip_files(directory):
                 zip_files.append(os.path.join(root, file))
     return zip_files
 
-parent_folder = "/home/sg/data/structionsite/dpr/CA/carbon5_2024-03-22-00-00-00/floor_004_converted/id"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 zip_files = sorted(zip_files)
@@ -103,7 +101,7 @@ driver.quit()
 
 '''
 #test:
-driver.get("file:///Users/caizhehao/Desktop/test-upload.html")
+driver.get("xxx")
 
 #test upload ability
 def find_zip_files(directory):
@@ -115,7 +113,7 @@ def find_zip_files(directory):
                 zip_files.append(os.path.join(root, file))
     return zip_files
 
-parent_folder = "/Users/caizhehao/Desktop/test_folder"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 
