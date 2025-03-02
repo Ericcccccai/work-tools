@@ -22,15 +22,15 @@ driver = webdriver.Chrome(options=options)
 ################################
 # REMEMBER TO UPDATE THIS LINK WITH CORRESPOND FLOOR
 ################################
-driver.get("https://app.structionsite.com/projects/ef977725-7ca1-4acb-891c-63922a6100a1/dashboard")
+driver.get("https://app.structionsite.com/projects/xxx/dashboard")
 
 
 #enters user name
-driver.switch_to.active_element.send_keys("sunggoo@fieldai.com") #REPLACE EMAIL
+driver.switch_to.active_element.send_keys("xxx") #REPLACE EMAIL
 
 #enter password
 passwordSelector = driver.find_element(By.ID, "user_password")
-passwordSelector.send_keys("23361madero!") #REPLACE PASSWORD
+passwordSelector.send_keys("xxx") #REPLACE PASSWORD
 
 #click login button
 loginButton = driver.find_element(By.ID, "sign-in-button")
