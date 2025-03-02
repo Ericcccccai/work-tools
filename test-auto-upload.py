@@ -15,15 +15,14 @@ driver = webdriver.Chrome(options=options)
 ################################
 # REMEMBER TO UPDATE THIS LINK WITH CORRESPOND FLOOR
 ################################
-driver.get("https://app.structionsite.com/projects/45482/576718") #f2
-#driver.get("https://app.structionsite.com/projects/45482/561931") #f4
+driver.get("https://app.structionsite.com/projects/xxx/xxx") #f2
 
 #enters user name
-driver.switch_to.active_element.send_keys("sunggoo@fieldai.com") #REPLACE EMAIL
+driver.switch_to.active_element.send_keys("xxx") #REPLACE EMAIL
 
 #enter password
 passwordSelector = driver.find_element(By.ID, "user_password")
-passwordSelector.send_keys("23361madero!") #REPLACE PASSWORD
+passwordSelector.send_keys("xxx") #REPLACE PASSWORD
 
 #click login button
 loginButton = driver.find_element(By.ID, "sign-in-button")
@@ -58,7 +57,7 @@ def find_zip_files(directory):
 ################################
 # REMEMBER TO UPDATE THIS PATH WITH CORRESPOND FOLDER
 ################################
-parent_folder = "/Users/caizhehao/Desktop/0322/floor_002_converted/id"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 zip_files = sorted(zip_files)
@@ -99,7 +98,7 @@ driver.quit()
 
 '''
 #test:
-driver.get("file:///Users/caizhehao/Desktop/test-upload.html")
+driver.get("xxx")
 
 #test upload ability
 def find_zip_files(directory):
@@ -111,7 +110,7 @@ def find_zip_files(directory):
                 zip_files.append(os.path.join(root, file))
     return zip_files
 
-parent_folder = "/Users/caizhehao/Desktop/test_folder"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 
@@ -122,7 +121,9 @@ for zip_file_path in zip_files:
     click_upload_button.click()
     print(f"Uploaded: {zip_file_path}")  # Optional: print the path of the uploaded file
     time.sleep(10)  # Wait for 10 seconds before the next upload
-'''import os
+'''
+'''
+import os
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -138,14 +139,14 @@ driver = webdriver.Chrome(options=options)
 ################################
 # REMEMBER TO UPDATE THIS LINK WITH CORRESPOND FLOOR
 ################################
-driver.get("https://app.structionsite.com/projects/45482/566546")
+driver.get("https://app.structionsite.com/projects/xxx/xxx")
 
 #enters user name
-driver.switch_to.active_element.send_keys("username@fieldai.com") #REPLACE EMAIL
+driver.switch_to.active_element.send_keys("xxx") #REPLACE EMAIL
 
 #enter password
 passwordSelector = driver.find_element(By.ID, "user_password")
-passwordSelector.send_keys("passwordHere") #REPLACE PASSWORD
+passwordSelector.send_keys("xxx") #REPLACE PASSWORD
 
 #click login button
 loginButton = driver.find_element(By.ID, "sign-in-button")
@@ -180,7 +181,7 @@ def find_zip_files(directory):
 ################################
 # REMEMBER TO UPDATE THIS PATH WITH CORRESPOND FOLDER
 ################################
-parent_folder = "/Users/caizhehao/Desktop/0318/floor_005_converted/id"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 zip_files = sorted(zip_files)
@@ -206,11 +207,11 @@ for zip_file_path in zip_files:
 print("Total Uploaded: %d \n" % totalUpload)
 input("Press Enter to close the browser...")
 driver.quit()
-
+'''
 
 '''
 #test:
-driver.get("file:///Users/caizhehao/Desktop/test-upload.html")
+driver.get("xxx")
 
 #test upload ability
 def find_zip_files(directory):
@@ -222,7 +223,7 @@ def find_zip_files(directory):
                 zip_files.append(os.path.join(root, file))
     return zip_files
 
-parent_folder = "/Users/caizhehao/Desktop/test_folder"
+parent_folder = "xxx"
 
 zip_files = find_zip_files(parent_folder)
 
